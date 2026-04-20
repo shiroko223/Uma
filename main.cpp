@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <random>
+#include <iomanip>
 using namespace std;
 
 class Dice{
@@ -74,8 +75,9 @@ public:
         GamePlay play;
         for(int i=0; i<n; i++)
             winner[play.run()]++;
+        cout<<endl<<"Ti le thang: ";
         for(int i=2; i<13; i++)
-            cout<<endl<<"No."<<i<<": "<<winner[i]<<" lan win.";
+            cout<<endl<<"No."<<i<<": "<<fixed<<setprecision(2)<<winner[i]*100.0/n<<" %";
     }
 };
 
